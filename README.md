@@ -9,7 +9,7 @@ Click below to view a chapter:
 ## Chapters
 
 - [Chapter 1: Intro](ch1_intro.md)
-- [Chapter 2: Setup and Usage](ch1_setup_usage.md)
+- [Chapter 2: Setup and Usage](ch2_setup_usage.md)
 - [Chapter 3: Syntax & Directives](ch3_syntax_directives.md)
 - [Chapter 4: Macros & Conditionals](ch4_macros_conditionals.md)
 - [Chapter 5: Expressions & the PRINTF System](ch5_expressions_printf.md)
