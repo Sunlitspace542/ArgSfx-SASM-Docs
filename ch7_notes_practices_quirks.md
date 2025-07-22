@@ -125,6 +125,6 @@
 
 ### Final Notes
 
-SASM and ArgSfx are powerful and historically significant assemblers used in the development of *Star Fox* and *Star Fox 2*. While they does show their age, they remain as extremely capable tools when mastered.
+SASM and ArgSfx are powerful and historically significant assemblers used in the development of *Star Fox* and *Star Fox 2*. While they do show their age, they remain as extremely capable tools when mastered.
 
-Next: Appendix - directive quick reference and symbol tables.
+Next: Appendix A - quick reference.
