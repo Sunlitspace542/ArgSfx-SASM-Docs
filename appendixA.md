@@ -56,24 +56,24 @@
 
 ### A.2 Conditional Assembly Directives
 
-| Condition               | Meaning                                                                                                                                        |
-| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| `IFEQ <exp>`            | Equal to zero                                                                                                                                  |
-| `IFNE <exp>`            | Not equal to zero                                                                                                                              |
-| `IFGT <exp>`            | Greater than                                                                                                                                   |
-| `IFGE <exp>`            | Greater or equal to zero                                                                                                                       |
-| `IFLT <exp>`            | Less than                                                                                                                                      |
-| `IFLE <exp>`            | Less or equal to zero                                                                                                                          |
-| `IFD <sym>`             | Symbol is defined                                                                                                                              |
-| `IFND <sym>`            | Symbol is not defined                                                                                                                          |
-| `IFC "str1","str2"`     | Strings equal                                                                                                                                  |
-| `IFNC "str1","str2"`    | Strings not equal                                                                                                                              |
-| `IFV "var"`             | Environment variable exists                                                                                                                    |
-| `IFNV "var"`            | Environment variable does not exist                                                                                                            |
-| `IFS <str>,pos,"char"`  | String character matches at position<br>**Important:** the parsing of this conditional changes slightly in ArgSfx.<br>See Chapter 7, "Quirks". |
-| `IFNS <str>,pos,"char"` | String character does not match<br>**Important:** the parsing of this conditional changes slightly in ArgSfx.<br>See Chapter 7, "Quirks".      |
-| `IFFE "fullpath"`       | File exists (**ArgSfx only**)                                                                                                                  |
-| `IFFNE "fullpath"`      | File does not exist (**ArgSfx only**)                                                                                                          |
+| Condition                 | Meaning                                                                                                                                        |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `IFEQ <exp>`              | Equal to zero                                                                                                                                  |
+| `IFNE <exp>`              | Not equal to zero                                                                                                                              |
+| `IFGT <exp>`              | Greater than                                                                                                                                   |
+| `IFGE <exp>`              | Greater or equal to zero                                                                                                                       |
+| `IFLT <exp>`              | Less than                                                                                                                                      |
+| `IFLE <exp>`              | Less or equal to zero                                                                                                                          |
+| `IFD <sym>`               | Symbol is defined                                                                                                                              |
+| `IFND <sym>`              | Symbol is not defined                                                                                                                          |
+| `IFC "str1","str2"`       | Strings equal                                                                                                                                  |
+| `IFNC "str1","str2"`      | Strings not equal                                                                                                                              |
+| `IFV "var"`               | Environment variable exists                                                                                                                    |
+| `IFNV "var"`              | Environment variable does not exist                                                                                                            |
+| `IFS <str>,<pos>,"char"`  | String character matches at position<br>**Important:** the parsing of this conditional changes slightly in ArgSfx.<br>See Chapter 7, "Quirks". |
+| `IFNS <str>,<pos>,"char"` | String character does not match<br>**Important:** the parsing of this conditional changes slightly in ArgSfx.<br>See Chapter 7, "Quirks".      |
+| `IFFE "fullpath"`         | File exists (**ArgSfx only**)                                                                                                                  |
+| `IFFNE "fullpath"`        | File does not exist (**ArgSfx only**)                                                                                                          |
 
 ---
 
