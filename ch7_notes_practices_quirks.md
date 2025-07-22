@@ -53,6 +53,8 @@
 
 - **Super FX Instruction Spelling:** Argonaut Software was a British company, and as such they used UK English. This particularly affects the Super FX ``COLOR`` instruction, for which the assembler only recognizes the UK English spelling (``COLOUR``), as opposed to the standard US English spelling used in modern assemblers. This can easily be addressed with a macro to create an alias for ``COLOUR`` with the US English spelling.
 
+- **Super FX Instruction Syntax:** Super FX syntax differs slightly from that of modern assemblers. In instructions such as `LMS` which reference memory locations, angle brackets must be used instead of parentheses, e.g. `LMS r1,[m_somesymbol]`
+
 - **Absence of ``ROLS`` Directive in ArgSfx:** ArgSfx replaced SASM's ``ROLS`` directive with the far more versatile ``SUBSTR`` directive. ``ROLS`` can easily be recreated with a macro:
   
   ```asm6502
