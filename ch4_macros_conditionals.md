@@ -111,7 +111,7 @@ Like `IRP`, but uses named/numbered strings:
 ```asm6502
     REPT 3
     IRS mystring,"A","B","C"
-    RUN ' IFS 1,1,"%$mystring"'
+    RUN ' db "%$mystring"'
     ENDR
 ```
 
