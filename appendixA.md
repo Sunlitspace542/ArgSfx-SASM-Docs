@@ -210,22 +210,42 @@ Refer to Chapter 5 for full formatting examples.
 
 The ArgBug `.MAP` File format consists of 2 segments:
 
-- The `SIZE` segment (format undetermined),
+- The `SIZE` segment, listing all ROM addresses where a processor mode directive (e.g. `LONGA`, `LONGI`, `SHORTA`, `SHORTI`) was invoked in the orignal assembly,
 
-- and the symbol map segment.
+- and the `SM32` symbol map segment, listing symbol addresses/values and their names.
+
+#### `SIZE` Segment Format
+
+- Segment begins with "SIZE" magic number
+
+- Each SIZE entry has:
+
+  - 3 bytes in little endian containing a SNES address (`lo:hi:bank` LE, `bank:hi:lo` BE)
+  
+  - 1 byte denoting Type ID (1 - 4)
+ 
+### Type IDs:
+
+- `01` - `MAP_SHORTA` - Accumulator 8-bit
+
+- `02` - `MAP_SHORTI` - Index registers X/Y 8-bit
+
+- `03` - `MAP_LONGA` - Accumulator 16-bit
+
+- `04` - `MAP_LONGI` - Index registers X/Y 16-bit
 
 #### Symbol Map Segment Format
 
-- Segment begins with ASCII "`SM32`" magic number, followed by 2 bytes of unknown meaning
+- Segment begins with ASCII "`SM32`" magic number, followed by 2 bytes indicating the total number of symbols in little-endian.
 
 - Each symbol entry has:
   
-  - 4 bytes in little-endian denoting the value of the symbol (`00:lo:hi:bank`) if it is a SNES ROM address, a 32-bit value for any other symbol (e.g equates, constants, variables)
+  - 4 bytes in little-endian denoting the value of the symbol; (`00:lo:hi:bank`) if it is a SNES ROM address, a 32-bit value for any other symbol (e.g equates, constants, variables).
   
-  - 1 byte denoting the length of the symbol name in bytes
+  - 1 byte denoting the length of the symbol name in bytes.
   
   - Symbol name (ASCII)
-
+ 
 ---
 
 End of the ArgSfx assembler manual
