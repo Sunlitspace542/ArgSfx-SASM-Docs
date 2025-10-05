@@ -40,8 +40,8 @@
 | `RUN 'txt'`                                  | Include result of a `PRINTF` string as source code.                                                                                                                                                                                                               |
 | `SEND (expr)`                                | Send the object code to a RAMboy development cartridge of type (expression). (default = $3D)                                                                                                                                                                      |
 | `SETDBR <n>`                                 | Define current data bank register                                                                                                                                                                                                                                 |
-| `SHORTA / LONGA`                             | Set accumulator size                                                                                                                                                                                                                                              |
-| `SHORTI / LONGI`                             | Set index register size                                                                                                                                                                                                                                           |
+| `SHORTA / LONGA`                             | Set accumulator size (short = 8 bit, long = 16 bit)                                                                                                                                                                                                               |
+| `SHORTI / LONGI`                             | Set index register size (short = 8 bit, long = 16 bit)                                                                                                                                                                                                            |
 | `SICE`                                       | Emit an invalid instruction (for debugging purposes)                                                                                                                                                                                                              |
 | `STRING <str>([len])=("txt"/<lbl>)`          | (**ArgSfx only**) Define/assign contents of a `PRINTF` string or label to a named or numbered string.<br>Max length is 150 characters.<br>Length does not need to be specified when assigning contents, but must be specified when a string is initially defined. |
 | `STRLEN (label),<str>`                       | Insert string length into label/expression (use in expressions by omitting the label parameter)                                                                                                                                                                   |
@@ -216,36 +216,35 @@ The ArgBug `.MAP` File format consists of 2 segments:
 
 #### `SIZE` Segment Format
 
-- Segment begins with "SIZE" magic number
+- Segment begins with "`SIZE`" magic number, followed by zero or more `SIZE` entries.
 
-- Each SIZE entry has:
-
+- Each `SIZE` entry has:
+  
   - 3 bytes in little endian containing a SNES address (`lo:hi:bank` LE, `bank:hi:lo` BE)
   
   - 1 byte denoting Type ID (1 - 4)
- 
-### Type IDs:
 
-- `01` - `MAP_SHORTA` - Accumulator 8-bit
+#### Type IDs:
 
-- `02` - `MAP_SHORTI` - Index registers X/Y 8-bit
-
-- `03` - `MAP_LONGA` - Accumulator 16-bit
-
-- `04` - `MAP_LONGI` - Index registers X/Y 16-bit
+| Value | Internal Name | Meaning                |
+| ----- | ------------- | ---------------------- |
+| `01`  | `MAP_SHORTA`  | Accumulator 8-bit      |
+| `02`  | `MAP_SHORTI`  | Index registers 8-bit  |
+| `03`  | `MAP_LONGA`   | Accumulator 16-bit     |
+| `04`  | `MAP_LONGI`   | Index registers 16-bit |
 
 #### Symbol Map Segment Format
 
-- Segment begins with ASCII "`SM32`" magic number, followed by 2 bytes indicating the total number of symbols in little-endian.
+- Segment begins with ASCII "`SM32`" magic number, followed by 2 bytes indicating the total number of symbols in little-endian, and a series of symbol entries.
 
 - Each symbol entry has:
   
-  - 4 bytes in little-endian denoting the value of the symbol; (`00:lo:hi:bank`) if it is a SNES ROM address, a 32-bit value for any other symbol (e.g equates, constants, variables).
+  - 4 bytes in little-endian denoting the value of the symbol; Byte order is (`00:lo:hi:bank`) if it is a SNES ROM address, a 32-bit value for any other symbol (e.g equates, constants, assembler variables).
   
   - 1 byte denoting the length of the symbol name in bytes.
   
   - Symbol name (ASCII)
- 
+
 ---
 
 End of the ArgSfx assembler manual
