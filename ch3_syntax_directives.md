@@ -4,7 +4,7 @@
 
 ArgSfx source files follow a format similar to traditional 65xx assemblers, with stricter indentation and stricter parsing (if using ArgSfx).
 
-- **Labels and constants must start at column 1** with no leading spaces or tabs. **Labels must not begin with numbers.**
+- **Labels and constants must start at column 1** with no leading spaces or tabs. **Labels must not begin with numbers. Sublabels, however, may have numbers following the leading dot.**
 - **Instructions, directives, parameters, and macro invocations must be indented** with at least one tab or space. (Tabs are recommended.) Comma-separated lists of parameters for macros should not contain any whitespace.
 - **Macro names in definitions** follow the same indentation and naming rules as labels.
 - **Comments** can begin with either a semicolon (`;`) or an asterisk (`*`). For modern conventions, semicolons are preferred.
