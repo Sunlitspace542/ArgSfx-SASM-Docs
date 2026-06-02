@@ -16,6 +16,7 @@
 - **Character Set:** Characters with ASCII codes greater than 127 may cause assembly to fail and/or other undefined behavior. Stick to DOS code page 437 at least, and Windows-1252 encoding at most.
 - **Internal Source Symbol Collisions:** As the assembler runs its own internal source file before including the source file specified, it is possible to define symbols in your source code with the same name as those defined in the internal source. If this happens, you will have to redefine the affected symbols.
 - **``GETHEAP`` Directive:** In SASM, there is a directive hidden to the user called ``GETHEAP``, which will get as much heap as specified. It should never be invoked by the user. ``GETHEAP`` cannot be defined as a macro.
+- **Use of `PUBLIC` in MARIO Parsing Mode:** `PUBLIC` is not recognized as a valid directive in MARIO parsing mode. The easiest fix is just to either disable MARIO parsing temporarily, or declare your publics before entering MARIO parsing mode.
 
 ---
 
