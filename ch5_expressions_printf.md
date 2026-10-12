@@ -189,7 +189,7 @@ Strings can have a maximum length of 150 characters.
 
 You can manipulate strings with:
 
-- `STRLEN (label),<str>` – stores string length in label/expression (use in expressions by omitting the label parameter)
+- `STRLEN <str>` – stores string length in expression
 - `ROLS str,offset` – rotates string left (replaced by `SUBSTR` in ArgSfx, see Chapter 7)
 - `SUBSTR start,end,str` - gets a substring
 - `UPPER str`, `LOWER str` – change string case
