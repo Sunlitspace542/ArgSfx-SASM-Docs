@@ -155,7 +155,7 @@ ArgSfx allows complex conditional logic to include or exclude code based on cons
 | `IFNS <str>,<pos>,"char"`         | String character does not match<br>**Important:** the parsing of this conditional changes slightly in ArgSfx.<br>See Chapter 7, "Quirks".      |
 | `IFFE "fullpath"`                 | File exists (**ArgSfx only**)                                                                                                                  |
 | `IFFNE "fullpath"`                | File does not exist (**ArgSfx only**)                                                                                                          |
-| `IF <expr1> (<operator> <expr2>)` | New-style IF block (**ArgSfx only**). `<operator>` can be one of `=` (equal),`<` (less than), or `>` (greater than). When only one expression is passed, the main clause is evaluated as true if the expression evaluates to a nonzero value.   |
+| `IF <expr1> (<operator> <expr2>)` | New-style IF block (**ArgSfx only**). `<operator>` can be one of `=`/`EQ` (equal), `NE` (not equal), `<`/`LT` (less than), `>`/`GT` (greater than), `<=`/`LE` (less or equal), `>=`/`GE` (greater or equal). When only one expression is passed, the main clause is evaluated as true if the expression evaluates to a nonzero value.   |
 
 Use `ELSEIF` to invert the condition block to test for and handle the opposite condition, and `ENDC` to terminate the condition block.
 
